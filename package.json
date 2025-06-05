@@ -1,31 +1,38 @@
 {
   "name": "aws-sso-session-display",
-  "displayName": "Aws sso session display",
-  "version": "0.0.1",
-  "description": "A basic Plasmo extension.",
+  "displayName": "AWS SSO Session Display",
+  "version": "0.1.0",
+  "description": "Displays the current AWS SSO account name on the AWS Console with configurable colours.",
   "author": "Daniel Woodward",
+  "packageManager": "pnpm@10.11.1+sha512.e519b9f7639869dc8d5c3c5dfef73b3f091094b0a006d7317353c72b124e80e1afd429732e28705ad6bfa1ee879c1fce46c128ccebd3192101f43dd67c667912",
   "scripts": {
     "dev": "plasmo dev",
     "build": "plasmo build",
-    "package": "plasmo package"
+    "package": "plasmo build --zip"
   },
   "dependencies": {
+    "@plasmohq/storage": "^1.15.0",
     "plasmo": "0.90.5",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "uuid": "^11.1.0"
   },
   "devDependencies": {
     "@ianvs/prettier-plugin-sort-imports": "4.1.1",
+    "@tailwindcss/postcss": "^4.1.8",
     "@types/chrome": "0.0.258",
     "@types/node": "20.11.5",
     "@types/react": "18.2.48",
     "@types/react-dom": "18.2.18",
+    "postcss": "^8.5.4",
     "prettier": "3.2.4",
+    "tailwindcss": "^4.1.8",
     "typescript": "5.3.3"
   },
   "manifest": {
     "host_permissions": [
-      "https://*/*"
+      "https://*.console.aws.amazon.com/*",
+      "https://health.aws.amazon.com/*"
     ]
   }
 }
